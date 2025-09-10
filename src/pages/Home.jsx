@@ -3,6 +3,7 @@ import Hero from '../components/Home/Hero';
 import ShopByCategory from '../components/Home/ShopByCategory';
 import TrendingProducts from '../components/Home/TrendingProducts';
 import TopMusicTeachers from '../components/Home/TopMusicTeachers';
+import WhyChooseSoundSellers from '../components/Home/WhyChooseSoundSellers';
 
 const Home = () => {
     return (
@@ -18,6 +19,9 @@ const Home = () => {
             </section>
             <section className='bg-white'>
                 <TopMusicTeachers></TopMusicTeachers>
+            </section>
+            <section className='bg-[#F9FAFB]'>
+                <WhyChooseSoundSellers></WhyChooseSoundSellers>
             </section>
         </div>
     );
