@@ -47,7 +47,7 @@ const plans = [
 const ChooseYourSellerPlan = () => {
     return (
         <section className="max-w-7xl mx-auto py-12">
-            <div className="max-w-11/12 max-auto">
+            <div className="max-w-11/12 mx-auto">
                 <div className="text-center">
                     <h2 className="text-2xl md:text-3xl font-extrabold text-[#101828]">
                         Choose Your Seller Plan
@@ -57,11 +57,11 @@ const ChooseYourSellerPlan = () => {
                     </p>
                 </div>
 
-                <div className="mt-10 flex flex-col lg:flex-row justify-center items-center lg:items-stretch gap-8">
+                <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-0 justify-items-center">
                     {plans.map((plan) => (
                         <div 
                             key={plan.name}
-                            className={`w-full max-w-md bg-[#FFFFFF] border rounded-2xl p-8 flex flex-col relative border-[#E5E7EB]`}
+                            className={`w-full max-w-md mx-auto bg-[#FFFFFF] border rounded-2xl p-8 flex flex-col relative border-[#E5E7EB]`}
                         >
                             {plan.isFeatured && (
                                 <div className="absolute top-0 right-0 bg-[#16A249] text-white text-sm font-bold px-4 py-2 rounded-sm">
