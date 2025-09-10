@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowUpRight, Heart } from "lucide-react";
-import { FaMapMarkerAlt, FaShoppingCart} from "react-icons/fa";
+import { FaMapMarkerAlt, FaShoppingCart } from "react-icons/fa";
 
 const products = [
   {
@@ -97,67 +97,86 @@ const TrendingProducts = () => {
   return (
     <section className="max-w-7xl mx-auto py-12">
       <div className="max-w-11/12 mx-auto">
-          <div className="flex items-center justify-between mb-10">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-[#101828] tracking-tight">Trending Now</h2>
-              <p className="mt-2 text-lg text-[#4A5565]">Hot deals that musicians are loving</p>
-            </div>
-            <button className="mt-4 sm:mt-0 whitespace-nowrap text-sm font-semibold text-[#A67C52] border border-[#A67C52] rounded-full px-5 py-2 transition-colors flex items-center gap-2">
-                See all
-                <ArrowUpRight size={16} />
-            </button>
+        <div className="flex items-center justify-between mb-10">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-[#101828] tracking-tight">
+              Trending Now
+            </h2>
+            <p className="mt-2 text-lg text-[#4A5565]">
+              Hot deals that musicians are loving
+            </p>
           </div>
+          <button className="mt-4 sm:mt-0 whitespace-nowrap text-sm font-semibold text-[#A67C52] border border-[#A67C52] rounded-full px-5 py-2 transition-colors flex items-center gap-2">
+            See all
+            <ArrowUpRight size={16} />
+          </button>
+        </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {products.map((item) => (
-              <div
-                key={item.id}
-                className="bg-[#FFFFFF] border-[#E5E7EB] rounded-xl shadow hover:shadow-lg transition p-3 flex flex-col"
-              >
-                <div className="relative">
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
-                  {item.badge && (
-                    <span className="absolute top-2 left-2 bg-[#F6F2EE] text-[#A67C52] text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
-                      {item.badge} <img src="https://res.cloudinary.com/dtjfophkh/image/upload/v1757466634/tick_m5bccj.png" alt="" />
-                    </span>
-                  )}
-                  <span
-                    className={`absolute top-2 right-2 text-xs font-semibold px-2 py-1 rounded-full ${item.tagColor}`}
-                  >
-                    {item.tag}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {products.map((item) => (
+            <div
+              key={item.id}
+              className="group relative bg-[#FFFFFF] border border-[#E5E7EB] rounded-xl shadow hover:shadow-lg transition flex flex-col overflow-hidden"
+            >
+              <div className="relative">
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-48 object-cover rounded-t-lg"
+                />
+                {item.badge && (
+                  <span className="absolute top-2 left-2 bg-[#F6F2EE] text-[#A67C52] text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
+                    {item.badge}{" "}
+                    <img
+                      src="https://res.cloudinary.com/dtjfophkh/image/upload/v1757466634/tick_m5bccj.png"
+                      alt=""
+                    />
                   </span>
-                </div>
+                )}
+                <span
+                  className={`absolute top-2 right-2 text-xs font-semibold px-2 py-1 rounded-full ${item.tagColor}`}
+                >
+                  {item.tag}
+                </span>
+              </div>
 
-                <div className="mt-3 flex flex-col flex-grow">
+              <div className="relative flex flex-col flex-grow p-3 overflow-hidden">
+
+                <div className="absolute inset-0 bg-[#A67C52] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out rounded-b-xl"></div>
+
+                <div className="relative z-10 flex flex-col h-full transition-colors duration-300 group-hover:text-white">
                   <h3 className="font-semibold">{item.title}</h3>
-                  <p className="flex items-center text-sm text-[#6A7282]">
+                  <p className="flex items-center text-sm text-[#6A7282] group-hover:text-white">
                     <FaMapMarkerAlt className="mr-1" /> {item.location}
                   </p>
-                  <p className="mt-1 text-[#666666]"><span className="font-bold text-[#101828]">{item.price}</span>{item.day}</p>
+                  <p className="mt-1 text-[#666666] group-hover:text-white">
+                    <span className="font-bold text-[#101828] group-hover:text-white">
+                      {item.price}
+                    </span>
+                    {item.day}
+                  </p>
 
                   <div className="flex items-center justify-between mt-3">
                     {item.type === "buy" ? (
-                      <button className="flex-1 bg-[#A67C52] text-[#FFFFFF] py-2 rounded-lg flex items-center justify-center gap-2 transition">
+                      <button className="flex-1 bg-[#A67C52] text-[#FFFFFF] py-2 rounded-lg flex items-center justify-center gap-2 transition group-hover:bg-white group-hover:text-[#A67C52]">
                         <FaShoppingCart /> Buy Now
                       </button>
                     ) : (
-                      <button className="flex-1 bg-[#A67C52] text-[#FFFFFF] py-2 rounded-lg flex items-center justify-center gap-2 transition">
-                        <img className="h-5 w-4" src="https://res.cloudinary.com/dtjfophkh/image/upload/v1757467761/rent_hihaq8.png" alt="" /> Rent now
+                      <button className="flex-1 bg-[#A67C52] text-[#FFFFFF] py-2 rounded-lg flex items-center justify-center gap-2 transition group-hover:bg-white group-hover:text-[#A67C52]">
+                        <FaShoppingCart />
+                        Rent Now
                       </button>
                     )}
 
-                    <button className="ml-4 text-[#4A5565]">
+                    <button className="ml-4 text-[#4A5565] bg-[white] rounded-lg py-2 px-2">
                       <Heart />
                     </button>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

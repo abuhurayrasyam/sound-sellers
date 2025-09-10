@@ -45,7 +45,7 @@ const teacherData = [
 ];
 
 const TeacherCard = ({ teacher }) => (
-    <div className="bg-[#FFFFFF] border border-[#E5E7EB] rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300 ease-in-out">
+    <div className="group relative bg-[#FFFFFF] border border-[#E5E7EB] rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
         <div className="relative">
             <img src={teacher.imageUrl} alt={teacher.course} className="w-full h-52 object-cover" />
             <div className="absolute top-3 right-3 bg-[#F6F2EE] backdrop-blur-sm text-[#262626] text-sm font-semibold px-3 py-1 rounded-full flex items-center gap-1">
@@ -53,32 +53,47 @@ const TeacherCard = ({ teacher }) => (
                 <span>{teacher.rating}</span>
             </div>
         </div>
-        <div className="p-4 flex flex-col gap-3">
-            <div>
-                <h3 className="text-lg font-bold text-[#101828]">{teacher.course}</h3>
-                <p className="text-sm text-[#6A7282]">{teacher.name}</p>
-            </div>
-            <div className="flex items-center gap-1.5 text-sm text-[#6A7282]">
-                <MapPin size={14} />
-                <span>{teacher.location}</span>
-            </div>
-            <div className="flex flex-wrap gap-2">
-                {teacher.tags.map(tag => (
-                    <span key={tag} className="bg-[#F5F5F5] text-[#171717] text-xs font-medium px-2.5 py-1 rounded-full">
-                        {tag}
-                    </span>
-                ))}
-            </div>
-            <hr className="border-t-1 border-[#dbdbdb]" />
-            <div className="flex justify-between items-center">
+
+        <div className="relative p-4 flex flex-col gap-3 overflow-hidden">
+            <div className="absolute inset-0 bg-[#A67C52] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out rounded-b-xl"></div>
+
+            <div className="relative z-10 flex flex-col gap-3 transition-colors duration-300 group-hover:text-white">
                 <div>
-                    <span className="text-xl font-bold text-[#101828]">${teacher.price}</span>
-                    <span className="text-sm text-[#6A7282]">/lesson</span>
+                    <h3 className="text-lg font-bold text-[#101828] group-hover:text-white">{teacher.course}</h3>
+                    <p className="text-sm text-[#6A7282] group-hover:text-white">{teacher.name}</p>
                 </div>
-                <a href="#" className="font-medium text-[#A67C52] flex items-center gap-1 transition-colors">
-                    Book Now
-                    <ArrowUpRight size={16} />
-                </a>
+
+                <div className="flex items-center gap-1.5 text-sm text-[#6A7282] group-hover:text-white">
+                    <MapPin size={14} />
+                    <span>{teacher.location}</span>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                    {teacher.tags.map(tag => (
+                        <span
+                            key={tag}
+                            className="bg-[#F5F5F5] text-[#171717] text-xs font-medium px-2.5 py-1 rounded-full group-hover:bg-white group-hover:text-[#A67C52]"
+                        >
+                            {tag}
+                        </span>
+                    ))}
+                </div>
+
+                <hr className="border-t border-[#dbdbdb]" />
+
+                <div className="flex justify-between items-center">
+                    <div>
+                        <span className="text-xl font-bold text-[#101828] group-hover:text-white">${teacher.price}</span>
+                        <span className="text-sm text-[#6A7282] group-hover:text-white">/lesson</span>
+                    </div>
+                    <a
+                        href="#"
+                        className="font-medium text-[#A67C52] flex items-center gap-1 transition-colors group-hover:text-white group-hover:px-3 group-hover:py-1 group-hover:rounded-md"
+                    >
+                        Book Now
+                        <ArrowUpRight size={16} />
+                    </a>
+                </div>
             </div>
         </div>
     </div>
