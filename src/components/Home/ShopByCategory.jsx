@@ -56,7 +56,7 @@ const ShopByCategory = () => {
           Discover thousands of musical instruments and equipment from trusted sellers worldwide
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 mt-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 mt-10">
           {categories.map((cat) => (
             <div
               key={cat.id}

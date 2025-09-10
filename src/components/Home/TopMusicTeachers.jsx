@@ -88,7 +88,7 @@ const TopMusicTeachers = () => {
     return (
         <section className="max-w-7xl mx-auto py-12">
             <div className="max-w-11/12 mx-auto">
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10">
                     <div>
                         <h2 className="text-2xl md:text-3xl font-extrabold text-[#101828] tracking-tight">Top Music Teachers</h2>
                         <p className="mt-2 text-lg text-[#4A5565]">Learn from the best instructors in your area</p>

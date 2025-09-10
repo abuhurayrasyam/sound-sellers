@@ -4,6 +4,7 @@ import ShopByCategory from '../components/Home/ShopByCategory';
 import TrendingProducts from '../components/Home/TrendingProducts';
 import TopMusicTeachers from '../components/Home/TopMusicTeachers';
 import WhyChooseSoundSellers from '../components/Home/WhyChooseSoundSellers';
+import ChooseYourSellerPlan from '../components/Home/ChooseYourSellerPlan';
 
 const Home = () => {
     return (
@@ -22,6 +23,9 @@ const Home = () => {
             </section>
             <section className='bg-[#F9FAFB]'>
                 <WhyChooseSoundSellers></WhyChooseSoundSellers>
+            </section>
+            <section className='bg-[#F6F2EE]'>
+                <ChooseYourSellerPlan></ChooseYourSellerPlan>
             </section>
         </div>
     );

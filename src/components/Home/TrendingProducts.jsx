@@ -97,7 +97,7 @@ const TrendingProducts = () => {
   return (
     <section className="max-w-7xl mx-auto py-12">
       <div className="max-w-11/12 mx-auto">
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center justify-between mb-10">
             <div>
               <h2 className="text-2xl md:text-3xl font-extrabold text-[#101828] tracking-tight">Trending Now</h2>
               <p className="mt-2 text-lg text-[#4A5565]">Hot deals that musicians are loving</p>
